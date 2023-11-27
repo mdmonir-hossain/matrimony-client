@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 const Navber = () => {
   return (
     <div>
-      <div className="shadow-lg sticky  ">
+      <div className="shadow-lg fixed w-full ">
         <Navbar fluid rounded>
           <Navbar.Brand href="">
             <img
