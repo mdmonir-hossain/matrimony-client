@@ -5,7 +5,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 const Routes = createBrowserRouter([
   {
     path: "/",
-    element:<MainLayout></MainLayout>,
+    element: <MainLayout></MainLayout>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -19,6 +19,10 @@ const Routes = createBrowserRouter([
       {
         path: "/aboutus",
         element: <div>About Us</div>,
+      },
+      {
+        path: "/contactus",
+        element: <div>Contact Us</div>,
       },
     ],
   },
