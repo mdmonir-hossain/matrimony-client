@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Home from "../Pages/Home/Home";
 
 const Routes = createBrowserRouter([
   {
@@ -10,7 +11,7 @@ const Routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Home</div>,
+        element:<Home></Home>,
       },
       {
         path: "/biodatas",

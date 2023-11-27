@@ -1,11 +1,17 @@
 import React from 'react';
-
-const Banner = () => {
+import { Banner } from "flowbite-react";
+const BannerSection = () => {
     return (
-        <div>
-            
-        </div>
+      <div>
+        <Banner>
+          <img
+            src="https://i.ibb.co/rxBJd43/banner.png"
+            className="w-full"
+            alt="Banner"
+          />
+        </Banner>
+      </div>
     );
 };
 
-export default Banner;
+export default BannerSection;
