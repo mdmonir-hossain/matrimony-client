@@ -1,14 +1,39 @@
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { Button, Label, TextInput } from "flowbite-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { signInWithPopup } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Login = () => {
+    const [error, setError] = useState();
+    const location = useLocation();
+    const navigate = useNavigate();
     const { auth, googleProvider, loginUser, user } = useContext(AuthContext);
+
+const handleSignin = (event) => {
+  event.preventDefault();
+  const form = event.target;
+  const email = form.email.value;
+  const password = form.password.value;
+  loginUser(email, password)
+    .then((result) => {
+      console.log(result.user);
+      navigate(location?.state ? location.state : "/");
+      if (result.user) {
+        toast(` Dear ${result.user} , you Login successfully`);
+      }
+    })
+    .catch((error) => {
+      setError(error.message);
+      if (error) {
+        toast("Email or Password does not match.");
+      }
+    });
+};
 
     const handleGoogleLogin = () => {
         signInWithPopup(auth, googleProvider)
@@ -35,7 +60,10 @@ const Login = () => {
           <h1 className="text-3xl text-center text-[#522b79] font-extrabold">
             Log In
           </h1>
-          <form className="flex max-w-md flex-col gap-4">
+          <form
+            onSubmit={handleSignin}
+            className="flex max-w-md flex-col gap-4"
+          >
             <div>
               <div className="mb-2 block">
                 <Label htmlFor="email1" value="Your email" />

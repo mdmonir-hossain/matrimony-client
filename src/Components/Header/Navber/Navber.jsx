@@ -47,7 +47,7 @@ const Navber = () => {
                 </Dropdown.Header>
                 <Dropdown.Item
                   onClick={handleLogout}
-                  className="bg-sky-500 text-white text-center hover:text-black p-2 rounded-lg"
+                  className="bg-[#522b79] hover:bg-[#e92f83] text-white text-center hover:text-black p-2 rounded-lg"
                 >
                   Sign out
                 </Dropdown.Item>
