@@ -5,8 +5,8 @@ import { Link, NavLink } from "react-router-dom";
 const Navber = () => {
   return (
     <div>
-      <div className="shadow-lg fixed w-full ">
-        <Navbar fluid rounded>
+      <div className="shadow-lg ">
+        <Navbar fluid >
           <Navbar.Brand href="">
             <img
               src="https://i.ibb.co/Bw2wcPT/EVERLASTING-TIES.png"
@@ -29,15 +29,15 @@ const Navber = () => {
               </Dropdown.Item>
             </Dropdown>
 
-            <div>
+            <div className="flex gap-4">
               <Link
-                to="/Login"
+                to="/login"
                 className="bg-[#522b79]  hover:bg-[#e92f83] text-white p-2 rounded-lg"
               >
                 Log in
-              </Link>{" "}
+              </Link>
               <Link
-                to="/SignUP"
+                to="/signup"
                 className="bg-[#522b79]  hover:bg-[#e92f83] text-white p-2 rounded-lg"
               >
                 Sign Up

@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
+import Biodatas from "../Pages/Biodatas/Biodatas";
+import Login from "../Pages/Login/Login";
+import Logout from "../Pages/SignUp/SignUp";
 
 const Routes = createBrowserRouter([
   {
@@ -11,11 +14,11 @@ const Routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element:<Home></Home>,
+        element: <Home></Home>,
       },
       {
         path: "/biodatas",
-        element: <div>Biodatas</div>,
+        element: <Biodatas></Biodatas>,
       },
       {
         path: "/aboutus",
@@ -24,6 +27,14 @@ const Routes = createBrowserRouter([
       {
         path: "/contactus",
         element: <div>Contact Us</div>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <Logout></Logout>,
       },
     ],
   },

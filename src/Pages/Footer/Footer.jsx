@@ -9,7 +9,7 @@ import {
 const FooterSection = () => {
   return (
     <div>
-      <Footer container className="bg-[#522b79] ">
+      <Footer container  className="bg-[#522b79] rounded-none">
         <div className="w-full text-center text-[#fff] ">
           <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
             <Footer.Brand
@@ -18,7 +18,7 @@ const FooterSection = () => {
               alt=" Logo"
               name=""
             />
-            <Footer.LinkGroup className="text-[#fff]">
+            <Footer.LinkGroup className="text-[#fff] gap-3 text-center">
               <Footer.Link href="#">About</Footer.Link>
               <Footer.Link href="#">Privacy Policy</Footer.Link>
               <Footer.Link href="#">Licensing</Footer.Link>
