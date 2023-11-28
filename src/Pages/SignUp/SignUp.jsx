@@ -21,6 +21,18 @@ const SignUp = () => {
         <form className="flex max-w-md flex-col gap-4">
           <div>
             <div className="mb-2 block">
+              <Label htmlFor="name" value="Your name" />
+            </div>
+            <TextInput
+              name="name"
+              id="name"
+              type="text"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div>
+            <div className="mb-2 block">
               <Label htmlFor="email1" value="Your email" />
             </div>
 
