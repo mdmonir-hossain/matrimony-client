@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Spinner } from "flowbite-react";
+import SixPremiumCard from "./SixPremiumCard";
 
 
 const HomePremiumMemberCard = () => {
@@ -15,7 +16,13 @@ const HomePremiumMemberCard = () => {
       return <Spinner aria-label="Default status example" />;
     }
     console.log(data);
-    return <div>Home Premium Member Card</div>;
+    return (
+      <div className=" grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-10">
+        {data.map((sixCard) => (
+          <SixPremiumCard sixCard={sixCard}></SixPremiumCard>
+        ))}
+      </div>
+    );
 };
 
 export default HomePremiumMemberCard;
