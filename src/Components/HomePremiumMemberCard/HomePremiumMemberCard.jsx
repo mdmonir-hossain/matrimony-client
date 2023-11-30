@@ -17,10 +17,13 @@ const HomePremiumMemberCard = () => {
     }
     console.log(data);
     return (
-      <div className=" grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-10">
-        {data.map((sixCard) => (
-          <SixPremiumCard sixCard={sixCard}></SixPremiumCard>
-        ))}
+      <div>
+        <h1 className="text-center font-bold text-3xl">premium membership</h1>
+        <div className=" grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-10">
+          {data.map((sixCard) => (
+            <SixPremiumCard sixCard={sixCard}></SixPremiumCard>
+          ))}
+        </div>
       </div>
     );
 };
