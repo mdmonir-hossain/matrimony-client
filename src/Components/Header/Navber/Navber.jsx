@@ -120,6 +120,33 @@ const Navber = () => {
             >
               Contact Us
             </NavLink>
+            {user?.email === "admin@gmail.com" ? (
+              <NavLink
+                to="admin"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-[#e92f83]"
+                    : ""
+                }
+              >
+                DashBoard
+              </NavLink>
+            ) : (
+              <NavLink
+                to="normal"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "border-b-2 border-[#e92f83]"
+                    : ""
+                }
+              >
+                DashBoard
+              </NavLink>
+            )}
           </Navbar.Collapse>
         </Navbar>
       </div>

@@ -10,6 +10,9 @@ import ContactUs from "../Components/ContactUs/ContactUs";
 import AllbioDatas from "../Pages/AllbioDatas.jsx/AllbioDatas";
 import BiodataDetails from "../Pages/BiodataDetails/BiodataDetails";
 import PRoutes from "./PRoutes";
+import DashBoard from "../Pages/DashBoard/DashBoard";
+import NormalUserDshBoard from "../Pages/DashBoard/NormalUserDshBoard";
+import AdminDashboard from "../Pages/DashBoard/AdminDashboard";
 
 const Routes = createBrowserRouter([
   {
@@ -53,6 +56,25 @@ const Routes = createBrowserRouter([
           </PRoutes>
         ),
         loader: () => fetch(`http://localhost:5000/allbiodatas`),
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <DashBoard></DashBoard>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/dashboard/",
+        element: <DashBoard></DashBoard>,
+      },
+      {
+        path: "/admin",
+        element: <AdminDashboard></AdminDashboard>,
+      },
+      {
+        path: "normal",
+        element: <NormalUserDshBoard></NormalUserDshBoard>,
       },
     ],
   },
