@@ -29,7 +29,7 @@ const Biodatas = ({ allbio }) => {
     Reviews,
   } = allbio;
   return (
-    <div className="min-h-screen">
+    <div className="gap-5">
       <Card className="max-w-sm">
         <div className="flex justify-center gap-5 px-4 pt-4">
           <div> Biodata Id:{BiodataId}</div>

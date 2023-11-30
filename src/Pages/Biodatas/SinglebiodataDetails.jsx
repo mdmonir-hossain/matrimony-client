@@ -27,7 +27,7 @@ const SinglebiodataDetails = ({ detailsid }) => {
     Reviews,
   } = detailsid;
   return (
-    <div>
+    <div className='className="gap-5"'>
       <Card className="max-w-sm">
         <div className="flex justify-center gap-5 px-4 pt-4">
           <div> Biodata Id:{BiodataId}</div>
@@ -60,7 +60,7 @@ const SinglebiodataDetails = ({ detailsid }) => {
           </div>
           <div className="mt-4 flex space-x-3 lg:mt-6">
             <div>Permanent Division: {PermanentDivisionName} </div>
-            <div>Height: : {ExpectedPartnerHeight }</div>
+            <div>Height: : {ExpectedPartnerHeight}</div>
           </div>
         </div>
       </Card>
