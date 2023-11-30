@@ -1,7 +1,7 @@
 import { Link} from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
-import { Button, Label, TextInput } from "flowbite-react";
+import { Button, Label, TextInput, Textarea } from "flowbite-react";
 
 
 
@@ -27,26 +27,47 @@ const ContactUs = () => {
             Contact Us
           </h1>
           <hr />
-          <p>
-            "Welcome to EVERLASTING TIES, where heartfelt connections flourish.
-            Our platform is designed with a simple yet profound belief: that
-            every person deserves genuine and meaningful companionship. At
-            EVERLASTING TIES, we understand that the search for a life partner
-            is a deeply personal journey. That’s why we've crafted a space that
-            prioritizes authenticity, respect, and the sanctity of
-            relationships. Our mission is to bring together individuals seeking
-            more than just a superficial match. We believe in fostering
-            connections based on shared values, interests, and aspirations.
-            Whether you're looking for a lifelong commitment or a fulfilling
-            companionship, we're dedicated to helping you find someone who
-            resonates with your essence. What sets us apart is our commitment to
-            creating a secure and respectful environment. Our stringent
-            verification processes and vigilant moderation ensure a safe space
-            for you to explore and connect without compromising your privacy or
-            security. Join our vibrant community of individuals looking for that
-            special someone. Let us be your companion on this beautiful journey
-            towards finding love and companionship.
-          </p>
+          <form className="flex max-w-md flex-col gap-4">
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="name" value="Your name" />
+              </div>
+              <TextInput
+                name="name"
+                id="name"
+                type="text"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="email1" value="Your email" />
+              </div>
+
+              <TextInput
+                id="email1"
+                type="email"
+                placeholder="Your email"
+                name="email"
+                required
+              />
+            </div>
+            <div className="max-w-md">
+              <div className="mb-2 block">
+                <Label htmlFor="comment" value="Your message" />
+              </div>
+              <Textarea
+                id="comment"
+                placeholder="Leave a comment..."
+                required
+                rows={4}
+              />
+            </div>
+            <Button type="submit" className="bg-[#522b79]">
+              Submit
+            </Button>
+          </form>
         </motion.div>
         <motion.div
           initial={{ x: "100vh" }}
