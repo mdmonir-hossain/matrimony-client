@@ -61,20 +61,36 @@ const Routes = createBrowserRouter([
   },
   {
     path: "/",
-    element: <DashBoard></DashBoard>,
+    element: (
+      <PRoutes>
+        <DashBoard></DashBoard>
+      </PRoutes>
+    ),
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: "/dashboard/",
-        element: <DashBoard></DashBoard>,
+        path: "/dashboard",
+        element: (
+          <PRoutes>
+            <DashBoard></DashBoard>
+          </PRoutes>
+        ),
       },
       {
         path: "/admin",
-        element: <AdminDashboard></AdminDashboard>,
+        element: (
+          <PRoutes>
+            <AdminDashboard></AdminDashboard>
+          </PRoutes>
+        ),
       },
       {
-        path: "normal",
+        path: "/normal",
         element: <NormalUserDshBoard></NormalUserDshBoard>,
+      },
+      {
+        path: "/editbiodata",
+        element: <div>edit</div>,
       },
     ],
   },
