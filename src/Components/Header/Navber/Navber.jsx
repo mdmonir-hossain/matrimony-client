@@ -85,7 +85,7 @@ const Navber = () => {
               Home
             </NavLink>
             <NavLink
-              to="/biodatas"
+              to="/allbiodatas"
               className={({ isActive, isPending }) =>
                 isPending
                   ? "pending"

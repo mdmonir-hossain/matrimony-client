@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, Spinner } from "flowbite-react";
 
 const SuccessCounter = () => {
-  const { isPendingmale, data:maleCounter } = useQuery({
+  const { isPendingmale, data: maleCounter } = useQuery({
     queryKey: ["male"],
     queryFn: async () => {
       const res = await fetch("http://localhost:5000/maleCounter");
@@ -33,11 +33,10 @@ const SuccessCounter = () => {
   if (isPendingcompleted) {
     return <Spinner aria-label="Default status example" />;
   }
-  console.log(maleCounter.length);
 
   return (
     <div>
-      <h1 className="text-3xl font-extrabold text-center mt-10">
+      <h1 className="text-3xl font-extrabold text-center mt-[100px]">
         Success Counter
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 md: grid-cols-2">
@@ -46,7 +45,7 @@ const SuccessCounter = () => {
             Total Male Biodatas
           </h5>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {maleCounter.length}
+            {maleCounter?.length}
           </h5>
         </Card>
         <Card className="max-w-sm">
@@ -54,7 +53,7 @@ const SuccessCounter = () => {
             Total Female Biodatas
           </h5>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {femaleCounter.length}
+            {femaleCounter?.length}
           </h5>
         </Card>
         <Card className="max-w-sm">
@@ -62,7 +61,7 @@ const SuccessCounter = () => {
             Marriages Completed
           </h5>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {completed.length}
+            {completed?.length}
           </h5>
         </Card>
       </div>

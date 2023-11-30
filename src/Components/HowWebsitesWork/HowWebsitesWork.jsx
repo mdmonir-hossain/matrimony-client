@@ -2,7 +2,7 @@ import React from "react";
 
 const HowWebsitesWork = () => {
   return (
-    <div className="container mx-auto mt-10 space-y-4">
+    <div className="container mx-auto mt-[100px] space-y-4">
       <h1 className="text-3xl font-extrabold text-center">How Websites Work</h1>
       <p>
         <span className="font-extrabold ">Step 1: </span> Profile Creation Every
@@ -19,11 +19,11 @@ const HowWebsitesWork = () => {
       <p>
         <span className="font-extrabold ">Step 3: </span> Step 4: Premium
         Membership Benefits Premium membership offers enhanced features and
-        advantages. Access to advanced detailed biodata, and a
-        wider pool of potential matches. Priority in profile visibility and more
-        exposure to other users within the community. Dedicated customer support
-        and assistance for premium members to enhance their experience and
-        maximize their chances of finding suitable matches.
+        advantages. Access to advanced detailed biodata, and a wider pool of
+        potential matches. Priority in profile visibility and more exposure to
+        other users within the community. Dedicated customer support and
+        assistance for premium members to enhance their experience and maximize
+        their chances of finding suitable matches.
       </p>
     </div>
   );

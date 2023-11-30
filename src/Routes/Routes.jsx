@@ -7,6 +7,9 @@ import Login from "../Pages/Login/Login";
 import Logout from "../Pages/SignUp/SignUp";
 import AboutUs from "../Components/AboutUs/AboutUs";
 import ContactUs from "../Components/ContactUs/ContactUs";
+import AllbioDatas from "../Pages/AllbioDatas.jsx/AllbioDatas";
+import BiodataDetails from "../Pages/BiodataDetails/BiodataDetails";
+import PRoutes from "./PRoutes";
 
 const Routes = createBrowserRouter([
   {
@@ -37,6 +40,19 @@ const Routes = createBrowserRouter([
       {
         path: "/signup",
         element: <Logout></Logout>,
+      },
+      {
+        path: "/allbiodatas",
+        element: <AllbioDatas></AllbioDatas>,
+      },
+      {
+        path: "/profileDetails/:_id",
+        element: (
+          <PRoutes>
+            <BiodataDetails></BiodataDetails>
+          </PRoutes>
+        ),
+        loader: () => fetch(`http://localhost:5000/allbiodatas`),
       },
     ],
   },
