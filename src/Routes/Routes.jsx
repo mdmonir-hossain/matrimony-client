@@ -55,7 +55,8 @@ const Routes = createBrowserRouter([
             <BiodataDetails></BiodataDetails>
           </PRoutes>
         ),
-        loader: () => fetch(`http://localhost:5000/allbiodatas`),
+        loader: () =>
+          fetch(`https://b8a12-server-side-six.vercel.app/allbiodatas`),
       },
     ],
   },

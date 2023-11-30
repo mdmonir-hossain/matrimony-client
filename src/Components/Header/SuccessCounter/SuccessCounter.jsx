@@ -5,21 +5,27 @@ const SuccessCounter = () => {
   const { isPendingmale, data: maleCounter } = useQuery({
     queryKey: ["male"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/maleCounter");
+      const res = await fetch(
+        "https://b8a12-server-side-six.vercel.app/maleCounter"
+      );
       return res.json();
     },
   });
   const { isPendingfemale, data: femaleCounter } = useQuery({
     queryKey: ["female"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/femaleCounter");
+      const res = await fetch(
+        "https://b8a12-server-side-six.vercel.app/femaleCounter"
+      );
       return res.json();
     },
   });
   const { isPendingcompleted, data: completed } = useQuery({
     queryKey: ["completed"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/marriagesCompleted");
+      const res = await fetch(
+        "https://b8a12-server-side-six.vercel.app/marriagesCompleted"
+      );
       return res.json();
     },
   });

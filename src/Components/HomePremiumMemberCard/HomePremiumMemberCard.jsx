@@ -6,7 +6,9 @@ const HomePremiumMemberCard = () => {
   const { isPending, data } = useQuery({
     queryKey: ["biodatas"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/biodatas");
+      const res = await fetch(
+        "https://b8a12-server-side-six.vercel.app/biodatas"
+      );
       return res.json();
     },
   });

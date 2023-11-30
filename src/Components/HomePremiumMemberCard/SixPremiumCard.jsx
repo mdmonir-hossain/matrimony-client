@@ -1,8 +1,10 @@
 import { Button, Card } from "flowbite-react";
+import { Link } from "react-router-dom";
 
 
 const SixPremiumCard = ({ sixCard }) => {
-  const {
+    const {
+      _id,
     BiodataId,
     BiodataType,
     Name,
@@ -45,8 +47,10 @@ const SixPremiumCard = ({ sixCard }) => {
               <div>Division: {PermanentDivisionName} </div>
               <div>Occupation: {Occupation}</div>
             </div>
-                </div>
-                <Button> Profile Details</Button>
+          </div>
+          <Link to={`/profileDetails/${_id}`}>
+            <Button> Profile Details</Button>
+          </Link>
         </Card>
       </div>
     );
