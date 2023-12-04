@@ -1,8 +1,9 @@
-import { Button, Card } from 'flowbite-react';
+import { Button, Card } from "flowbite-react";
+import { Link } from "react-router-dom";
 
-
-const SinglebiodataDetails = ({ detailsid }) => {
+const MatchBiodatas = ({ match }) => {
   const {
+    _id,
     BiodataId,
     BiodataType,
     Name,
@@ -25,9 +26,9 @@ const SinglebiodataDetails = ({ detailsid }) => {
     AccountType,
     MarriageCompleted,
     Reviews,
-  } = detailsid;
+  } = match;
   return (
-    <div className='className="gap-5"'>
+    <div className="gap-5">
       <Card className="max-w-sm">
         <div className="flex justify-center gap-5 px-4 pt-4">
           <div> Biodata Id:{BiodataId}</div>
@@ -45,28 +46,13 @@ const SinglebiodataDetails = ({ detailsid }) => {
             <div>Division: {PermanentDivisionName} </div>
             <div>Occupation: {Occupation}</div>
           </div>
-
-          <div className="mt-4 flex space-x-3 lg:mt-6">
-            <div>Date Of Birth: {DateOfBirth} </div>
-            <div>Height: {Height}</div>
-          </div>
-          <div className="mt-4 flex space-x-3 lg:mt-6">
-            <div>Fathers Name: {FathersName} </div>
-            <div>Mothers Name: {MothersName}</div>
-          </div>
-          <div className="mt-4 flex space-x-3 lg:mt-6">
-            <div>Weight: {Weight} </div>
-            <div>ExpectedPartnerAge: {ExpectedPartnerAge}</div>
-          </div>
-          <div className="mt-4 flex space-x-3 lg:mt-6">
-            <div>Permanent Division: {PermanentDivisionName} </div>
-            <div>Height: : {ExpectedPartnerHeight}</div>
-          </div>
         </div>
-        <Button className="bg-[#e92f83]"> Add to Favourites</Button>
+        <Link to={`/profileDetails/${_id}`}>
+          <Button> Profile Details</Button>
+        </Link>
       </Card>
     </div>
   );
 };
 
-export default SinglebiodataDetails;
+export default MatchBiodatas;

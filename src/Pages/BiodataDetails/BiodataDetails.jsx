@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import SinglebiodataDetails from '../Biodatas/SinglebiodataDetails';
+import AllbioDatas from '../AllbioDatas.jsx/AllbioDatas';
+import MatchBiodatas from '../Biodatas/MatchBiodatas';
 
 const BiodataDetails = () => {
     const selectedCard = useLoaderData();
     const [detailsid, setDetails] = useState([]);
+    const [type, setType] = useState([]);
     const { _id } = useParams();
     const detailsData = useLoaderData([]);
     useEffect(() => {
@@ -13,10 +16,25 @@ const BiodataDetails = () => {
       );
       setDetails(singlecard);
     }, [_id, detailsData]);
-    console.log(detailsid);
+  
+    // useEffect(() => {
+    //   const typecard = selectedCard?.filter(
+    //     (typematch) => typematch.BiodataType === BiodataType;
+    //   );
+    //   setType(typecard);
+    // }, [_id]);
+    console.log(detailsData);
     return (
-      <div>
-        <SinglebiodataDetails detailsid={detailsid}></SinglebiodataDetails>
+      <div className="flex flex-wrap">
+        <div>
+          <SinglebiodataDetails detailsid={detailsid}></SinglebiodataDetails>
+        </div>
+        <div className="lg:w-2 bg-[#522b79] min-h-screen"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4 ml-10">
+          {detailsData.map((match) => (
+            <MatchBiodatas match={match}></MatchBiodatas>
+          ))}
+        </div>
       </div>
     );
 };
