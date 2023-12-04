@@ -29,6 +29,15 @@ const AdminDashboardDate = () => {
       return res.json();
     },
   });
+  const { isPendingpremium, data: premium } = useQuery({
+    queryKey: ["premium"],
+    queryFn: async () => {
+      const res = await fetch(
+        "https://b8a12-server-side-six.vercel.app/premiumCount"
+      );
+      return res.json();
+    },
+  });
 
   if (isPendingmale) {
     return <Spinner aria-label="Default status example" />;
@@ -39,10 +48,12 @@ const AdminDashboardDate = () => {
   if (isPendingcompleted) {
     return <Spinner aria-label="Default status example" />;
   }
+  if (isPendingpremium) {
+    return <Spinner aria-label="Default status example" />;
+  }
 
   return (
     <div>
-      
       <div className="grid grid-cols-1 lg:grid-cols-3 md: grid-cols-2 gap-4">
         <Card className="max-w-sm">
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -66,6 +77,14 @@ const AdminDashboardDate = () => {
           </h5>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {completed?.length}
+          </h5>
+        </Card>
+        <Card className="max-w-sm">
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Premium Account
+          </h5>
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {premium?.length}
           </h5>
         </Card>
       </div>
