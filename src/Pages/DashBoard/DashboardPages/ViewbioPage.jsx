@@ -1,10 +1,7 @@
-import { Button, Card } from "flowbite-react";
-import { useContext } from "react";
-import Swal from "sweetalert2";
-import { AuthContext } from "../../Provider/AuthProvider";
+import { Button, Card } from 'flowbite-react';
 
-const SinglebiodataDetails = ({ detailsid }) => {
-  const { user } = useContext(AuthContext);
+
+const ViewbioPage = ({ view }) => {
   const {
     BiodataId,
     BiodataType,
@@ -28,56 +25,7 @@ const SinglebiodataDetails = ({ detailsid }) => {
     AccountType,
     MarriageCompleted,
     Reviews,
-  } = detailsid;
-
-  const handleAddtoFavorite = () => {
-    const addtofavouriteadd = {
-      BiodataId,
-      BiodataType,
-      Name,
-      ProfileImageLink,
-      DateOfBirth,
-      Height,
-      Weight,
-      Age,
-      Occupation,
-      Race,
-      FathersName,
-      MothersName,
-      PermanentDivisionName,
-      PresentDivisionName,
-      ExpectedPartnerAge,
-      ExpectedPartnerHeight,
-      ExpectedPartnerWeight,
-      ContactEmail,
-      MobileNumber,
-      AccountType,
-      MarriageCompleted,
-      Reviews,
-      email: user.email,
-    };
-
-    fetch("https://b8a12-server-side-six.vercel.app/addtofavourite", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addtofavouriteadd),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "add to favourite Successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
-        }
-      });
-  };
-
+  } = view;
   return (
     <div className='className="gap-5"'>
       <Card className="max-w-sm">
@@ -115,13 +63,10 @@ const SinglebiodataDetails = ({ detailsid }) => {
             <div>Height: : {ExpectedPartnerHeight}</div>
           </div>
         </div>
-        <Button onClick={handleAddtoFavorite} className="bg-[#e92f83]">
-          {" "}
-          Add to Favourites
-        </Button>
+        <Button className="bg-[#e92f83]"> Add to Favourites</Button>
       </Card>
     </div>
   );
 };
 
-export default SinglebiodataDetails;
+export default ViewbioPage;

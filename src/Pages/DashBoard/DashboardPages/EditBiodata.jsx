@@ -50,6 +50,7 @@ const EditBiodata = () => {
     const ExpectedPartnerHeight = form.ExpectedPartnerHeigth.value;
     const ExpectedPartnerWeight = form.ExpectedPartnerweight.value;
     const mobile = form.mobile.value;
+    const birth = form.birth.value;
 
     const biodataData = {
       biodataDataId: biodata_Id,
@@ -66,7 +67,8 @@ const EditBiodata = () => {
       ExpectedPartnerAge,
       ExpectedPartnerHeight,
       ExpectedPartnerWeight,
-      mobile,
+        mobile,
+      birth,
       userEmail: user?.email || "",
       userName: user?.displayName || "",
       userImage: user?.photoURL || "",
@@ -146,13 +148,13 @@ const EditBiodata = () => {
             </div>
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="weight" value="weight" />
+                <Label htmlFor="weight" value="birth" />
               </div>
               <TextInput
-                id="weight"
-                type="text"
-                placeholder="Weight"
-                name="Weight"
+                id="birth"
+                type="date"
+                placeholder="birth"
+                name="birth"
                 required
               />
             </div>

@@ -13,11 +13,15 @@ import PRoutes from "./PRoutes";
 import DashBoard from "../Pages/DashBoard/DashBoard";
 import NormalUserDshBoard from "../Pages/DashBoard/NormalUserDshBoard";
 import AdminDashboard from "../Pages/DashBoard/AdminDashboard";
-import EditBioDatas from "../Pages/Biodatas/EditBioDatas";
-import EditBiodata from "../Pages/DashBoard/DashboardPages/EditBiodata";
+
 import ViewBiodata from "../Pages/DashBoard/DashboardPages/ViewBiodata";
 import RequestBiodata from "../Pages/DashBoard/DashboardPages/RequestBiodata";
 import FavouritesBiodata from "../Pages/DashBoard/DashboardPages/FavouritesBiodata";
+import EditBiodata from "../Pages/DashBoard/DashboardPages/EditBiodata";
+import AdminDashboardDate from "../Pages/DashBoard/DashboardPages/AdminDashboardDate";
+import ManageUsers from "../Pages/DashBoard/DashboardPages/ManageUsers";
+import ApprovedPremium from "../Pages/DashBoard/DashboardPages/ApprovedPremium";
+import ApprovedContactRequest from "../Pages/DashBoard/DashboardPages/ApprovedContactRequest";
 
 const Routes = createBrowserRouter([
   {
@@ -78,7 +82,7 @@ const Routes = createBrowserRouter([
         path: "normal",
         element: (
           <PRoutes>
-            <EditBioDatas></EditBioDatas>
+            <EditBiodata></EditBiodata>
           </PRoutes>
         ),
       },
@@ -120,6 +124,40 @@ const Routes = createBrowserRouter([
         element: (
           <PRoutes>
             <FavouritesBiodata></FavouritesBiodata>
+          </PRoutes>
+        ),
+        loader: () =>
+          fetch(`https://b8a12-server-side-six.vercel.app/addtofavourite`),
+      },
+      {
+        path: "admindashboard",
+        element: (
+          <PRoutes>
+            <AdminDashboardDate></AdminDashboardDate>
+          </PRoutes>
+        ),
+      },
+      {
+        path: "manageusers",
+        element: (
+          <PRoutes>
+            <ManageUsers></ManageUsers>
+          </PRoutes>
+        ),
+      },
+      {
+        path: "approvedpremium",
+        element: (
+          <PRoutes>
+            <ApprovedPremium></ApprovedPremium>
+          </PRoutes>
+        ),
+      },
+      {
+        path: "approvedcontactrequest",
+        element: (
+          <PRoutes>
+            <ApprovedContactRequest></ApprovedContactRequest>
           </PRoutes>
         ),
       },
