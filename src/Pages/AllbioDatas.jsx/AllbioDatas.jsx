@@ -7,30 +7,30 @@ const AllbioDatas = () => {
   const [asc, setAsc] = useState(true);
   const [type, setType] = useState(true);
   const [allbiodatas, setAllbiodatas] = useState([]);
-  // const { isPending, data,refetch  } = useQuery({
-  //   queryKey: ["allbiodatas"],
-  //   queryFn: async () => {
-  //     const res = await fetch(
-  //       `https://b8a12-server-side-six.vercel.app/allbiodatas?sort=${asc ? 'asc' : 'desc'}`
-  //     );
-  //     return res.json();
-  //
-  //   },
-  // });
+  const { isPending, data,refetch  } = useQuery({
+    queryKey: ["allbiodatas"],
+    queryFn: async () => {
+      const res = await fetch(
+        `https://b8a12-server-side-six.vercel.app/allbiodatas?sort=${asc ? 'asc' : 'desc'}`
+      );
+      return res.json();
+  
+    },
+  });
 
-  // if (isPending) {
-  //   return <Spinner aria-label="Default status example" />;
-  // }
+  if (isPending) {
+    return <Spinner aria-label="Default status example" />;
+  }
 
-  useEffect(() => {
-    fetch(
-      `https://b8a12-server-side-six.vercel.app/allbiodatas?sort=${
-        asc ? "asc" : "desc"
-      }`
-    )
-      .then((res) => res.json())
-      .then((data) => setAllbiodatas(data));
-  }, [asc]);
+  // useEffect(() => {
+  //   fetch(
+  //     `https://b8a12-server-side-six.vercel.app/allbiodatas?sort=${
+  //       asc ? "asc" : "desc"
+  //     }`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setAllbiodatas(data));
+  // }, [asc]);
   return (
     <div className="flex">
       <div className="w-full  lg:w-[200px] bg-[#522b79] min-h-screen">
@@ -66,7 +66,7 @@ const AllbioDatas = () => {
         </div>
       </div>
       <div className="grid grid-cols-1   lg:grid-cols-3 md:grid-cols-2 mt-10 gap-5">
-        {allbiodatas?.map((allbio) => (
+        {data?.map((allbio) => (
           <Biodatas allbio={allbio}></Biodatas>
         ))}
       </div>

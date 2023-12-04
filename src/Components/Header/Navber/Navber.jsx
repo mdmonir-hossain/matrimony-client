@@ -120,7 +120,7 @@ const Navber = () => {
             </NavLink>
             {user?.email === "admin@gmail.com" ? (
               <NavLink
-                to="admin"
+                to="dashboard/admin"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -133,7 +133,7 @@ const Navber = () => {
               </NavLink>
             ) : (
               <NavLink
-                to="normal"
+                to="dashboard/normal"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"

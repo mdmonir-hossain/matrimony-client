@@ -13,6 +13,11 @@ import PRoutes from "./PRoutes";
 import DashBoard from "../Pages/DashBoard/DashBoard";
 import NormalUserDshBoard from "../Pages/DashBoard/NormalUserDshBoard";
 import AdminDashboard from "../Pages/DashBoard/AdminDashboard";
+import EditBioDatas from "../Pages/Biodatas/EditBioDatas";
+import EditBiodata from "../Pages/DashBoard/DashboardPages/EditBiodata";
+import ViewBiodata from "../Pages/DashBoard/DashboardPages/ViewBiodata";
+import RequestBiodata from "../Pages/DashBoard/DashboardPages/RequestBiodata";
+import FavouritesBiodata from "../Pages/DashBoard/DashboardPages/FavouritesBiodata";
 
 const Routes = createBrowserRouter([
   {
@@ -61,7 +66,7 @@ const Routes = createBrowserRouter([
     ],
   },
   {
-    path: "/",
+    path: "dashboard",
     element: (
       <PRoutes>
         <DashBoard></DashBoard>
@@ -70,28 +75,53 @@ const Routes = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: "/dashboard",
+        path: "normal",
         element: (
           <PRoutes>
-            <DashBoard></DashBoard>
+            <EditBioDatas></EditBioDatas>
           </PRoutes>
         ),
       },
       {
-        path: "/admin",
+        path: "admin",
         element: (
           <PRoutes>
             <AdminDashboard></AdminDashboard>
           </PRoutes>
         ),
       },
+
       {
-        path: "/normal",
-        element: <NormalUserDshBoard></NormalUserDshBoard>,
+        path: "editbiodata",
+        element: (
+          <PRoutes>
+            <EditBiodata></EditBiodata>
+          </PRoutes>
+        ),
       },
       {
-        path: "/editbiodata",
-        element: <div>edit</div>,
+        path: "viewbiodata",
+        element: (
+          <PRoutes>
+            <ViewBiodata></ViewBiodata>
+          </PRoutes>
+        ),
+      },
+      {
+        path: "requestbiodata",
+        element: (
+          <PRoutes>
+            <RequestBiodata></RequestBiodata>
+          </PRoutes>
+        ),
+      },
+      {
+        path: "favouritesbiodata",
+        element: (
+          <PRoutes>
+            <FavouritesBiodata></FavouritesBiodata>
+          </PRoutes>
+        ),
       },
     ],
   },

@@ -15,12 +15,19 @@ const NormalUserDshBoard = () => {
   };
   return (
     <div>
-      <div className="bg-[#522b79] w-[300px] min-h-screen flex flex-col text-white gap-4 p-4">
-        <Link to='/editbiodata'>Edit Biodata</Link>
-        <Link>View Biodata</Link>
-        <Link>My Contact Request</Link>
-        <Link>My Contact Request.</Link>
-        <Link>Favourites Biodata</Link>
+      <div className="bg-[rgb(82,43,121)] w-[300px] min-h-screen flex flex-col text-white gap-4 p-4">
+        <div className="flex justify-between">
+          <h1 className=" text-white text-xl ">User DashBoard</h1>
+          
+          <Link to="/" className=" text-white text-xl ">
+            Home
+          </Link>
+        </div>
+        <hr />
+        <Link to="/dashboard/editbiodata">Edit Biodata</Link>
+        <Link to="/dashboard/viewbiodata">View Biodata</Link>
+        <Link to="/dashboard/requestbiodata">My Contact Request</Link>
+        <Link to="/dashboard/favouritesbiodata">Favourites Biodata</Link>
         <Link onClick={handleLogout}>Logout</Link>
       </div>
     </div>
