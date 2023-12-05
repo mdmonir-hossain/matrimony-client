@@ -53,7 +53,7 @@ const EditBiodata = () => {
     const birth = form.birth.value;
 
     const biodataData = {
-      biodataDataId: biodata_Id,
+      BiodataId: biodata_Id,
       BiodataType,
       Weight,
       height,
@@ -67,7 +67,7 @@ const EditBiodata = () => {
       ExpectedPartnerAge,
       ExpectedPartnerHeight,
       ExpectedPartnerWeight,
-        mobile,
+      mobile,
       birth,
       userEmail: user?.email || "",
       userName: user?.displayName || "",
@@ -75,6 +75,7 @@ const EditBiodata = () => {
       AccountType: "Normal",
       MarriageCompleted: "No",
       Reviews: "",
+      Payment: 0,
     };
     console.log(biodataData);
     axios
@@ -194,7 +195,7 @@ const EditBiodata = () => {
               <TextInput
                 name="Age"
                 id="Age"
-                type="text"
+                type="number"
                 placeholder="Age"
                 required
               />
@@ -213,8 +214,8 @@ const EditBiodata = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-2">
-            <div>
+          <div className="grid grid-cols-1 ">
+            <div className="w-full">
               <div className="mb-2 block">
                 <Label htmlFor="Race" value="Race" />
               </div>
@@ -226,18 +227,7 @@ const EditBiodata = () => {
               </Select>
               {/* <Datepicker name="expiredDate" /> */}
             </div>
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="Occupation " value="Occupation" />
-              </div>
-              <TextInput
-                id="Occupation"
-                type="Occupation"
-                placeholder="Occupation"
-                name="Occupation"
-                required
-              />
-            </div>
+           
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-2">
             <div>
@@ -328,7 +318,7 @@ const EditBiodata = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 ">
             <div>
               <div className="mb-2 block">
                 <Label
@@ -337,7 +327,7 @@ const EditBiodata = () => {
                 />
               </div>
 
-              <TextInput
+              <TextInput className="w-full"
                 id="ExpectedPartnerweight"
                 type="ExpectedPartnerweight"
                 placeholder="ExpectedPartnerweight"
@@ -345,21 +335,7 @@ const EditBiodata = () => {
                 required
               />
             </div>
-            <div>
-              <div className="mb-2 block">
-                <Label
-                  htmlFor="ExpectedPartnerHeigth"
-                  value="ExpectedPartnerHeigth"
-                />
-              </div>
-              <TextInput
-                id="ExpectedPartnerHeigth"
-                type="ExpectedPartnerHeigth"
-                placeholder="ExpectedPartnerHeigth"
-                name="ExpectedPartnerHeigth"
-                required
-              />
-            </div>
+            
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-2">
             <div>

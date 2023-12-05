@@ -1,5 +1,4 @@
-import { Button, Card } from 'flowbite-react';
-
+import { Button, Card } from "flowbite-react";
 
 const ViewbioPage = ({ view }) => {
   const {
@@ -15,8 +14,8 @@ const ViewbioPage = ({ view }) => {
     Race,
     FathersName,
     MothersName,
-    PermanentDivisionName,
-    PresentDivisionName,
+    PermanentAddress,
+    presentAddress,
     ExpectedPartnerAge,
     ExpectedPartnerHeight,
     ExpectedPartnerWeight,
@@ -42,7 +41,7 @@ const ViewbioPage = ({ view }) => {
             <div>BiodataType: {BiodataType}</div>
           </div>
           <div className="mt-4 flex space-x-3 lg:mt-6">
-            <div>Division: {PermanentDivisionName} </div>
+            <div>Division: {PermanentAddress} </div>
             <div>Occupation: {Occupation}</div>
           </div>
 
@@ -59,7 +58,7 @@ const ViewbioPage = ({ view }) => {
             <div>ExpectedPartnerAge: {ExpectedPartnerAge}</div>
           </div>
           <div className="mt-4 flex space-x-3 lg:mt-6">
-            <div>Permanent Division: {PermanentDivisionName} </div>
+            <div>Permanent Division: {PermanentAddress} </div>
             <div>Height: : {ExpectedPartnerHeight}</div>
           </div>
         </div>
