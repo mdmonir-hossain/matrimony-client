@@ -30,9 +30,9 @@ const AllbioDatas = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/allbiodatas?sort=${asc ? "asc" : "desc"}&gender=${
-        Male ? "Male" : "Female"
-      }&division=${selectedDivision}`
+      `https://b8a12-server-side-six.vercel.app/allbiodatas?sort=${
+        asc ? "asc" : "desc"
+      }&gender=${Male ? "Male" : "Female"}&division=${selectedDivision}`
     )
       .then((res) => res.json())
       .then((data) => setAllbiodatas(data));
