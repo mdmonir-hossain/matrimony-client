@@ -28,6 +28,7 @@ const NormalUserDshBoard = () => {
         <Link to="/dashboard/viewbiodata">View Biodata</Link>
         <Link to="/dashboard/requestbiodata">My Contact Request</Link>
         <Link to="/dashboard/favouritesbiodata">Favourites Biodata</Link>
+        <Link to="/dashboard/gotmarried">Got Married</Link>
         <Link onClick={handleLogout}>Logout</Link>
       </div>
     </div>

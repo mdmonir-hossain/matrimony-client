@@ -14,8 +14,8 @@ const ViewbioPage = ({ view }) => {
     Race,
     FathersName,
     MothersName,
-    PermanentAddress,
-    presentAddress,
+    PermanentDivisionName,
+    PresentDivisionName,
     ExpectedPartnerAge,
     ExpectedPartnerHeight,
     ExpectedPartnerWeight,
@@ -41,7 +41,7 @@ const ViewbioPage = ({ view }) => {
             <div>BiodataType: {BiodataType}</div>
           </div>
           <div className="mt-4 flex space-x-3 lg:mt-6">
-            <div>Division: {PermanentAddress} </div>
+            <div>Division: {PermanentDivisionName} </div>
             <div>Occupation: {Occupation}</div>
           </div>
 
@@ -58,11 +58,11 @@ const ViewbioPage = ({ view }) => {
             <div>ExpectedPartnerAge: {ExpectedPartnerAge}</div>
           </div>
           <div className="mt-4 flex space-x-3 lg:mt-6">
-            <div>Permanent Division: {PermanentAddress} </div>
+            <div>Permanent Division: {PresentDivisionName} </div>
             <div>Height: : {ExpectedPartnerHeight}</div>
           </div>
         </div>
-        <Button className="bg-[#e92f83]"> Add to Favourites</Button>
+        
       </Card>
     </div>
   );

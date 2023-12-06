@@ -38,40 +38,40 @@ const EditBiodata = () => {
     const form = event.target;
     const BiodataType = form.BiodataType.value;
     const Weight = form.Weight.value;
-    const height = form.height.value;
+    const Height = form.height.value;
     const Age = form.Age.value;
     const Occupation = form.Occupation.value;
     const FathersName = form.FathersName.value;
     const MothersName = form.MothersName.value;
-    const PermanentAddress = form.PermanentAddress.value;
-    const presentAddress = form.presentAddress.value;
+    const PermanentDivisionName = form.PermanentAddress.value;
+    const PresentDivisionName = form.presentAddress.value;
     const Race = form.Race.value;
     const ExpectedPartnerAge = form.ExpectedPartnerAge.value;
     const ExpectedPartnerHeight = form.ExpectedPartnerHeigth.value;
     const ExpectedPartnerWeight = form.ExpectedPartnerweight.value;
-    const mobile = form.mobile.value;
-    const birth = form.birth.value;
+    const MobileNumber = form.mobile.value;
+    const DateOfBirth = form.birth.value;
 
     const biodataData = {
       BiodataId: biodata_Id,
       BiodataType,
       Weight,
-      height,
+      Height,
       Age,
       Occupation,
       FathersName,
       MothersName,
-      PermanentAddress,
-      presentAddress,
+      PermanentDivisionName,
+      PresentDivisionName,
       Race,
       ExpectedPartnerAge,
       ExpectedPartnerHeight,
       ExpectedPartnerWeight,
-      mobile,
-      birth,
-      userEmail: user?.email || "",
-      userName: user?.displayName || "",
-      userImage: user?.photoURL || "",
+      MobileNumber,
+      DateOfBirth,
+      ContactEmail: user?.email || "",
+      Name: user?.displayName || "",
+      ProfileImageLink: user?.photoURL || "",
       AccountType: "Normal",
       MarriageCompleted: "No",
       Reviews: "",

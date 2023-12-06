@@ -30,6 +30,7 @@ const AdminDashboard = () => {
         <Link to="/dashboard/ApprovedContactRequest">
           Approved Contact Request
         </Link>
+        <Link to="/dashboard/successstory">Success Story</Link>
 
         <Link onClick={handleLogout}>Logout</Link>
       </div>

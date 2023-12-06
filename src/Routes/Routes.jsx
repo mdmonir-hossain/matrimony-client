@@ -22,6 +22,8 @@ import AdminDashboardDate from "../Pages/DashBoard/DashboardPages/AdminDashboard
 import ManageUsers from "../Pages/DashBoard/DashboardPages/ManageUsers";
 import ApprovedPremium from "../Pages/DashBoard/DashboardPages/ApprovedPremium";
 import ApprovedContactRequest from "../Pages/DashBoard/DashboardPages/ApprovedContactRequest";
+import GotMarried from "../Pages/DashBoard/DashboardPages/GotMarried";
+import SuccessStoryAdminShow from "../Pages/DashBoard/DashboardPages/SuccessStoryAdminShow";
 
 const Routes = createBrowserRouter([
   {
@@ -158,6 +160,22 @@ const Routes = createBrowserRouter([
         element: (
           <PRoutes>
             <ApprovedContactRequest></ApprovedContactRequest>
+          </PRoutes>
+        ),
+      },
+      {
+        path: "gotmarried",
+        element: (
+          <PRoutes>
+            <GotMarried></GotMarried>
+          </PRoutes>
+        ),
+      },
+      {
+        path: "successstory",
+        element: (
+          <PRoutes>
+            <SuccessStoryAdminShow></SuccessStoryAdminShow>
           </PRoutes>
         ),
       },

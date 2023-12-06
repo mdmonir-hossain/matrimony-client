@@ -3,11 +3,11 @@ import SuccessStoryCard from "./SuccessStoryCard";
 import { useQuery } from "@tanstack/react-query";
 
 const SuccessStory = () => {
-  const { isPendingcompleted, data: completed } = useQuery({
-    queryKey: ["completed"],
+  const { isPendingcompleted, data: reviews } = useQuery({
+    queryKey: ["reviews"],
     queryFn: async () => {
       const res = await fetch(
-        "https://b8a12-server-side-six.vercel.app/marriagesCompleted"
+        "https://b8a12-server-side-six.vercel.app/reviews"
       );
       return res.json();
     },
@@ -19,7 +19,7 @@ const SuccessStory = () => {
     <div className="mt-[100px]">
       <h1 className="text-3xl font-extrabold text-center ">Success Story</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-        {completed?.map((story) => (
+        {reviews?.map((story) => (
           <SuccessStoryCard story={story}></SuccessStoryCard>
         ))}
       </div>
