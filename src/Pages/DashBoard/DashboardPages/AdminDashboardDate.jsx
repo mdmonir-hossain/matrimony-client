@@ -38,6 +38,15 @@ const AdminDashboardDate = () => {
       return res.json();
     },
   });
+  const { isPendingrevenue, data: revenue } = useQuery({
+    queryKey: ["revenue"],
+    queryFn: async () => {
+      const res = await fetch(
+        "https://b8a12-server-side-six.vercel.app/revenue"
+      );
+      return res.json();
+    },
+  });
 
   if (isPendingmale) {
     return <Spinner aria-label="Default status example" />;
@@ -49,6 +58,9 @@ const AdminDashboardDate = () => {
     return <Spinner aria-label="Default status example" />;
   }
   if (isPendingpremium) {
+    return <Spinner aria-label="Default status example" />;
+  }
+  if (isPendingrevenue) {
     return <Spinner aria-label="Default status example" />;
   }
 
@@ -85,6 +97,16 @@ const AdminDashboardDate = () => {
           </h5>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {premium?.length}
+          </h5>
+        </Card>
+        <Card className="max-w-sm">
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Total revenue
+          </h5>
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {revenue?.map((total) => (
+              <div>{total.Payment}</div>
+            ))}
           </h5>
         </Card>
       </div>
